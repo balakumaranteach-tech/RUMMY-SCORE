@@ -31,3 +31,4 @@ $('submit').onclick=()=>{let active=activeIndices();let vals=active.map(i=>entry
 function warn(s){$('validation').textContent=s;$('validation').classList.remove('hidden')}$('clearEntry').onclick=()=>renderGame();$('undo').onclick=()=>{if(!game.rounds.length)return;if(confirm('Undo the last round? This will recalculate OUT status.')){game.rounds.pop();game.out=[];game.rounds.forEach(r=>r.scores.forEach((s,i)=>{if(s!==null&&s!==undefined&&playerNames[i]&&totals().find(x=>x.i===i).total>=240&&!game.out.includes(i))game.out.push(i)}));save();renderGame()}};$('backSetup').onclick=()=>{ $('setup').scrollIntoView({behavior:'smooth'})};
 load();renderNames();if(game)showGame();
 </script></body></html>
+  
